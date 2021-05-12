@@ -48,29 +48,10 @@ function App() {
 
     let query = `
       {
-        continent(code:"${selectedCode}") {
-          name
-          code
-          countries {
-            code
-            name
-            capital
-          }
-        }
+
       }`
 
-    // fetch the countries for this continent from GraphQL...
-    fetch(`https://countries.trevorblades.com/graphql`, {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify( { query } )
-    })
-    .then(res => res.json())
-    .then(result => {
-      console.log(result.data)
-      setCountries(result.data.continent.countries)
-    })
-    .catch(err => console.log("ERROR:", err))
+    // TODO: fetch the countries for this continent from GraphQL...
   }
 
   // if continent changed => load its f*** countries
